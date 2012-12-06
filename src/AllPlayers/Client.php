@@ -403,6 +403,14 @@ class Client extends HttpClient
      */
     public function groupsCreateGroup($title, $description, $location, $category, $optional_config)
     {
+        $optional_config += array(
+          'group_type' => null,
+          'web_address' => null,
+          'status' => null,
+          'groupmates_enabled' => null,
+          'groups_above' => null
+        );
+
         $params = array(
             'title' => $title,
             'description' => $description,
